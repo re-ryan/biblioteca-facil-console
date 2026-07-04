@@ -6,6 +6,7 @@ import br.com.bibliotecafacil.console.biblioteca.dto.ConsultaBibliotecaDto;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Component;
+import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestClient;
 import org.springframework.web.client.RestClientResponseException;
 
@@ -13,6 +14,8 @@ import java.util.List;
 
 @Component
 public class BibliotecaApiClient {
+
+    private static final String MENSAGEM_API_INDISPONIVEL = "Não foi possível conectar à API do Biblioteca Fácil. Verifique se o backend está em execução.";
 
     private final RestClient restClient;
     private final ObjectMapper objectMapper;
@@ -31,6 +34,8 @@ public class BibliotecaApiClient {
                     });
         } catch (final RestClientResponseException exception) {
             throw new IllegalArgumentException(extrairMensagemErro(exception));
+        } catch (final ResourceAccessException exception) {
+            throw new IllegalArgumentException(MENSAGEM_API_INDISPONIVEL);
         }
     }
 
@@ -43,6 +48,8 @@ public class BibliotecaApiClient {
                     .toBodilessEntity();
         } catch (final RestClientResponseException exception) {
             throw new IllegalArgumentException(extrairMensagemErro(exception));
+        } catch (final ResourceAccessException exception) {
+            throw new IllegalArgumentException(MENSAGEM_API_INDISPONIVEL);
         }
     }
 

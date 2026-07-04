@@ -1,19 +1,23 @@
 package br.com.bibliotecafacil.console.usuario.client;
 
+import java.util.List;
+
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.stereotype.Component;
+import org.springframework.web.client.ResourceAccessException;
+import org.springframework.web.client.RestClient;
+import org.springframework.web.client.RestClientResponseException;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import br.com.bibliotecafacil.console.api.dto.ErroApiDto;
 import br.com.bibliotecafacil.console.usuario.dto.CadastroUsuarioDto;
 import br.com.bibliotecafacil.console.usuario.dto.ConsultaUsuarioDto;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestClient;
-import org.springframework.web.client.RestClientResponseException;
-
-import java.util.List;
-
 @Component
 public class UsuarioApiClient {
+
+    private static final String MENSAGEM_API_INDISPONIVEL = "Não foi possível conectar à API do Biblioteca Fácil. Verifique se o backend está em execução.";
 
     private final RestClient restClient;
     private final ObjectMapper objectMapper;
@@ -32,6 +36,8 @@ public class UsuarioApiClient {
                     });
         } catch (final RestClientResponseException exception) {
             throw new IllegalArgumentException(extrairMensagemErro(exception));
+        } catch (final ResourceAccessException exception) {
+            throw new IllegalArgumentException(MENSAGEM_API_INDISPONIVEL);
         }
     }
 
@@ -44,6 +50,8 @@ public class UsuarioApiClient {
                     .toBodilessEntity();
         } catch (final RestClientResponseException exception) {
             throw new IllegalArgumentException(extrairMensagemErro(exception));
+        } catch (final ResourceAccessException exception) {
+            throw new IllegalArgumentException(MENSAGEM_API_INDISPONIVEL);
         }
     }
 
