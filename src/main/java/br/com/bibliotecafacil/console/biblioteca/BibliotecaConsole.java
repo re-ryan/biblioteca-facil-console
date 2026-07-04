@@ -1,10 +1,8 @@
 package br.com.bibliotecafacil.console.biblioteca;
 
-import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 @Component
-@Profile("console")
 public class BibliotecaConsole {
 
     private final CadastroBibliotecaConsole cadastroBibliotecaConsole;

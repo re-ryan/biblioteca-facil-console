@@ -1,15 +1,14 @@
 package br.com.bibliotecafacil.console.biblioteca;
 
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+
 import br.com.bibliotecafacil.console.Console;
 import br.com.bibliotecafacil.console.biblioteca.client.BibliotecaApiClient;
 import br.com.bibliotecafacil.console.biblioteca.dto.ConsultaBibliotecaDto;
-import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Component;
-
-import java.util.List;
 
 @Component
-@Profile("console")
 public class ConsultaBibliotecaConsole {
 
     private final Console console;

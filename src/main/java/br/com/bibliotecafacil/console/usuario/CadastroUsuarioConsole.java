@@ -1,19 +1,18 @@
 package br.com.bibliotecafacil.console.usuario;
 
-import br.com.bibliotecafacil.console.Console;
-import br.com.bibliotecafacil.console.usuario.client.UsuarioApiClient;
-import br.com.bibliotecafacil.console.usuario.dto.CadastroUsuarioDto;
-import br.com.bibliotecafacil.console.usuario.dto.TipoUsuario;
-import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Component;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
+import br.com.bibliotecafacil.console.Console;
+import br.com.bibliotecafacil.console.usuario.client.UsuarioApiClient;
+import br.com.bibliotecafacil.console.usuario.dto.CadastroUsuarioDto;
+import br.com.bibliotecafacil.console.usuario.dto.TipoUsuario;
+
 @Component
-@Profile("console")
 public class CadastroUsuarioConsole {
 
     private static final String TITULO = "Cadastro de usuário";

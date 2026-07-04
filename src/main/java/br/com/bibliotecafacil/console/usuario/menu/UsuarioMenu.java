@@ -1,20 +1,18 @@
 package br.com.bibliotecafacil.console.usuario.menu;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+import org.springframework.stereotype.Component;
+
 import br.com.bibliotecafacil.console.Console;
 import br.com.bibliotecafacil.console.menu.ConsoleMenu;
 import br.com.bibliotecafacil.console.menu.OpcaoMenu;
 import br.com.bibliotecafacil.console.menu.SecaoMenu;
 import br.com.bibliotecafacil.console.usuario.UsuarioConsole;
 
-import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Component;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-
 @Component
-@Profile("console")
 public class UsuarioMenu extends ConsoleMenu {
 
     private final UsuarioConsole usuarioConsole;

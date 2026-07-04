@@ -1,17 +1,15 @@
 package br.com.bibliotecafacil.console.menu;
 
-import br.com.bibliotecafacil.console.Console;
-import br.com.bibliotecafacil.console.RoteadorConsole;
-
-import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Component;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import org.springframework.stereotype.Component;
+
+import br.com.bibliotecafacil.console.Console;
+import br.com.bibliotecafacil.console.RoteadorConsole;
+
 @Component
-@Profile("console")
 public class HomeMenu extends ConsoleMenu {
 
     private final RoteadorConsole navegacao;

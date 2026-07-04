@@ -1,18 +1,16 @@
 package br.com.bibliotecafacil.console.acervo.menu;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+
 import br.com.bibliotecafacil.console.Console;
 import br.com.bibliotecafacil.console.menu.ConsoleMenu;
 import br.com.bibliotecafacil.console.menu.OpcaoMenu;
 import br.com.bibliotecafacil.console.menu.SecaoMenu;
 
-import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Component;
-
-import java.util.ArrayList;
-import java.util.List;
-
 @Component
-@Profile("console")
 public class AcervoMenu extends ConsoleMenu {
 
     public AcervoMenu(final Console consoleFacade) {

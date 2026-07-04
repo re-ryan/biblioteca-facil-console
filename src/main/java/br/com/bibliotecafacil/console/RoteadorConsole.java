@@ -1,15 +1,14 @@
 package br.com.bibliotecafacil.console;
 
+import java.util.Objects;
+
+import org.springframework.stereotype.Component;
+
 import br.com.bibliotecafacil.console.acervo.menu.AcervoMenu;
 import br.com.bibliotecafacil.console.biblioteca.menu.BibliotecaMenu;
 import br.com.bibliotecafacil.console.usuario.menu.UsuarioMenu;
-import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Component;
-
-import java.util.Objects;
 
 @Component
-@Profile("console")
 public class RoteadorConsole {
 
     private final AcervoMenu acervoMenu;

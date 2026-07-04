@@ -1,16 +1,15 @@
 package br.com.bibliotecafacil.console.biblioteca;
 
-import br.com.bibliotecafacil.console.Console;
-import br.com.bibliotecafacil.console.biblioteca.client.BibliotecaApiClient;
-import br.com.bibliotecafacil.console.biblioteca.dto.CadastroBibliotecaDto;
-import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Component;
-
 import java.math.BigDecimal;
 import java.util.regex.Pattern;
 
+import org.springframework.stereotype.Component;
+
+import br.com.bibliotecafacil.console.Console;
+import br.com.bibliotecafacil.console.biblioteca.client.BibliotecaApiClient;
+import br.com.bibliotecafacil.console.biblioteca.dto.CadastroBibliotecaDto;
+
 @Component
-@Profile("console")
 public class CadastroBibliotecaConsole {
 
     private static final String TITULO_BIBLIOTECA = "Cadastro de biblioteca";

@@ -1,13 +1,11 @@
 package br.com.bibliotecafacil.console;
 
-import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Component;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 @Component
-@Profile("console")
 public class LayoutConsole {
 
 	private static final int LARGURA_CONTEUDO = 100;
